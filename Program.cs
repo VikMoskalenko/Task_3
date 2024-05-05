@@ -10,6 +10,15 @@ namespace Task_3
             Console.WriteLine("Input gender  - Male, Female, Unknown: ");
             string gender = Console.ReadLine();
             // Gender gender;
+            if(Enum.TryParse(gender, out Gender gender1))
+            {
+                user1.Gender = gender1;
+            }
+            else
+            {
+                Console.WriteLine("Invalid input");
+                user1.Gender = Gender.Unknown;
+            }
 
             Console.WriteLine("Input 1st  name: ");
             user1.FirstName = Console.ReadLine();
@@ -60,7 +69,7 @@ namespace Task_3
             }
             else
             {
-                return $"My name is {FirstName}. I am baby";
+                return $"My name is {FirstName}, surname {LastName}, gender {Gender} I am baby";
             }
 
         }
